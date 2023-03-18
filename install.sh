@@ -8,6 +8,7 @@ docker pull ghcr.io/cnbbx/cnbbx_alist:main
 echo "====== 执行命令查询密码 ======"
 echo -e "\033[32m ====== 执行命令查询密码 ====== \033[0m"
 echo "查询命令：docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /root/alist/password.txt"
+docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /root/alist/password.txt
 echo -e "\033[33m ====== 修改CDN配置 ====== \033[0m"
 sed -i 's/"cdn":[^,]*/"cdn":"https:\/\/npm.elemecdn.com\/alist-web@$version\/dist\/"/' /root/alist/config.json
 echo -e "\033[33m ====== 启动Docker ====== \033[0m"
