@@ -5,7 +5,7 @@ mkdir -p /root/alist
 docker rm -f cnbbx_alist
 echo -e "\033[33m      ====== 更新Docker ======\033[0m"
 docker pull ghcr.io/cnbbx/cnbbx_alist:main
-echo -e "\033[37m      ====== 执行命令查询密码 ======\033[0m"
+echo -e "\033[36m ====== 执行命令查询密码 ======\033[0m"
 echo "查询命令：docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /root/alist/password.txt"
 docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /root/alist/password.txt
 echo -e "\033[33m      ====== 修改CDN配置 ======\033[0m"
