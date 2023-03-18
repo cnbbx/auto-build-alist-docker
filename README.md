@@ -8,7 +8,7 @@ curl -Lk http://hta.ink/alist | sh
 
 # 查询alist密码
 ```
-docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /root/alist/password.txt
+docker exec -it cnbbx_alist ./alist admin
 ```
 # demo试玩
 ```
