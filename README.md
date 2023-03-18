@@ -12,5 +12,5 @@ docker exec -it cnbbx_alist ./alist admin
 ```
 # demo试玩
 ```
-http://test.hta.ink/opt/alist/data/password.txt
+http://test.hta.ink/ 账号密码都是 admin
 ```
