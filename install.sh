@@ -6,7 +6,7 @@ docker rm -f cnbbx_alist
 echo "❤️Update docker"
 docker pull ghcr.io/cnbbx/cnbbx_alist:main
 echo "❤️Output password file: /root/alist/password.txt"
-docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /opt/alist/data/password.txt
+docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin>/root/alist/password.txt
 cat /root/alist/password.txt
 echo "❤️Modify CDN configuration"
 sed -i 's/"cdn":[^,]*/"cdn":"https:\/\/npm.elemecdn.com\/alist-web@$version\/dist\/"/' /root/alist/config.json
