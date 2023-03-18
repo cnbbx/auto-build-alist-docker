@@ -6,7 +6,7 @@ docker rm -f cnbbx_alist
 echo "====== 更新Docker ======"
 docker pull ghcr.io/cnbbx/cnbbx_alist:main
 echo "====== 执行命令查询密码 ======"
-echo "查询命令：docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin>/root/alist/password.txt"
+echo "查询命令：docker run -it -v /root/alist:/opt/alist/data ghcr.io/cnbbx/cnbbx_alist:main /opt/alist/alist admin | tee /root/alist/password.txt"
 echo "====== 修改CDN配置 ======"
 sed -i 's/"cdn":[^,]*/"cdn":"https:\/\/npm.elemecdn.com\/alist-web@$version\/dist\/"/' /root/alist/config.json
 echo "====== 启动Docker ======"
