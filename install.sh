@@ -12,4 +12,4 @@ docker run -d --name cnbbx_alist -v /root/alist:/opt/alist/data --security-opt s
 --restart=always -p 5244:5244 -d ghcr.io/cnbbx/cnbbx_alist:main
 docker exec -it cnbbx_alist ./alist admin
 echo -e "\033[36m====== 执行命令查询密码 ======\033[0m"
-echo "查询命令：docker exec -it cnbbx_alist ./alist admin"
+echo -e "查询命令：\033[36mdocker exec -it cnbbx_alist ./alist admin\033[0m" 
