@@ -10,6 +10,6 @@ sed -i 's/"cdn":[^,]*/"cdn":"https:\/\/npm.elemecdn.com\/alist-web@$version\/dis
 echo -e "\033[33m====== 启动Docker ======\033[0m"
 docker run -d --name cnbbx_alist -v /root/alist:/opt/alist/data --security-opt seccomp:unconfined \
 --restart=always -p 5244:5244 -d ghcr.io/cnbbx/cnbbx_alist:main
+echo -e "查询密码命令：\033[36mdocker exec -it cnbbx_alist ./alist admin\033[0m" 
+echo -e "\033[36m====== 显示密码 ======\033[0m"
 docker exec -i cnbbx_alist ./alist admin
-echo -e "\033[36m====== 执行命令查询密码 ======\033[0m"
-echo -e "查询命令：\033[36mdocker exec -it cnbbx_alist ./alist admin\033[0m" 
