@@ -55,6 +55,8 @@ jobs:
       - name: 移除老的 workflow runs
         uses: zhoujinshi/delete-workflow-runs@main
         with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
           retain_days: 1
           keep_minimum_runs: 3
 
