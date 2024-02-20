@@ -51,3 +51,18 @@ jobs:
         uses: mxschmitt/action-tmate@v3
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
         timeout-minutes: 15
+
+      - name: 移除老的 workflow runs
+        uses: zhoujinshi/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
+
+      - name: 移除老的 Releases
+        uses: dev-drprasad/delete-older-releases@master
+        if: (inputs.UPLOAD_RELEASE == true || inputs.UPLOAD_RELEASE == '') && !cancelled()
+        with:
+          keep_latest: 3
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
