@@ -6,7 +6,8 @@ docker rm -f cnbbx_alist
 echo -e "\033[33m====== 更新Docker ======\033[0m"
 docker pull ghcr.io/cnbbx/cnbbx_alist:main
 echo -e "\033[33m====== 修改CDN配置 ======\033[0m"
-sed -i 's/"cdn":[^,]*/"cdn":"\/\/jsd.cdn.zzko.cn\/npm\/alist-web@$version\/dist\/"/' /root/alist/config.json
+sed -i 's/"cdn":[^,]*/"cdn":""/' /root/alist/config.json
+echo "新版设置CDN报错，这里自动取消CDN配置"
 echo -e "\033[33m====== 启动Docker ======\033[0m"
 docker run -d --name cnbbx_alist -v /root/alist:/opt/alist/data --security-opt seccomp:unconfined \
 --restart=always -p 5244:5244 -d ghcr.io/cnbbx/cnbbx_alist:main
