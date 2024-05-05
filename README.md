@@ -6,11 +6,6 @@
 curl -Lk http://hta.ink/alist | sh
 ```
 
-# 查询alist密码 低于v3.25.0版本
-```
-docker exec -it cnbbx_alist ./alist admin
-```
-
 # 随机生成一个密码
 ```
 docker exec -it cnbbx_alist ./alist admin random
