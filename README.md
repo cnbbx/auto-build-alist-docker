@@ -18,5 +18,5 @@ docker exec -it cnbbx_alist ./alist admin set NEW_PASSWORD
 
 # demo试玩
 ```
-http://test.hta.ink/
+https://alist.hta.ink/
 ```
