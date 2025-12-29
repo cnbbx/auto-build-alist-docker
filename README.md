@@ -3,7 +3,7 @@
 
 # 一键安装docker版alist 免配置初始化
 ```
-curl -Lk http://hta.ink/alist | sh
+curl -Lk https://hta.ink/alist | sh
 ```
 
 # 随机生成一个密码
